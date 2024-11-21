@@ -1,6 +1,22 @@
 # IRTM_project
 Goal: Evaluation retrieval method on RAG project.
 
+------2024/11/20更新------
+第1部分：不做G，只做RA得到結果
+第2部分：做完整的RAG獲得資料
+
+分工給大家的內容：
+1. 尋找適合的retriever並實作
+2. 研究相關的內容，例如他的ensemble retriever的機制等等，但我確實不知道該怎麼分配比較好
+
+supabase資訊：
+Organization: IRTM_project
+Project_name: IRTM_RAGproject
+Db pwd: QwePoi!)2938
+Region: Seoul
+
+------2024/11/07更新------
+
 ## something to discuss:
 我們的課程是資料檢索文字探勘，所以我們會著重在資料檢索上面
 理論上的RAG流程：
