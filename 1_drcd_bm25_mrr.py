@@ -3,8 +3,14 @@ from supabase import create_client
 from dotenv import load_dotenv
 
 """
+sklearn:
 Hit Rate: 0.9750930432293158
 MRR: 0.93229315774406
+
+elasticsearch:
+Hit Rate: 0.9739478957915831
+MRR: 0.9198921652829475
+
 """
 
 # 載入環境變數
@@ -22,7 +28,7 @@ if not SUPABASE_URL or not SUPABASE_API_KEY:
 supabase = create_client(SUPABASE_URL, SUPABASE_API_KEY)
 
 # 查詢資料
-response = supabase.table('drcd_questions').select('dataset_id, similar_doc_ids_bm25_2, paragraph_id').execute()
+response = supabase.table('drcd_questions').select('dataset_id, similar_doc_ids_bm25, paragraph_id').execute()
 
 
 # 資料處理
@@ -46,7 +52,7 @@ def calculate_average(scores):
 
 # 遍歷資料計算指標
 for row in data:
-    similar_doc_ids = row['similar_doc_ids_bm25_2']
+    similar_doc_ids = row['similar_doc_ids_bm25']
     gold_doc_id = row['paragraph_id']
 
     # 計算 Reciprocal Rank
